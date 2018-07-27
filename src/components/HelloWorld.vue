@@ -4,7 +4,7 @@
     <h2 @click="stepTo">Essential Links</h2>
 
 
-     <h2>{{info}}</h2>
+    <h2 ref="infoTitle">{{info}}</h2>
     <small-widget @setData="onSetData" :infoList="infoList"></small-widget>
 
   </div>
@@ -31,6 +31,7 @@ export default {
   methods: {
     onSetData (value) {
       this.info = value;
+      this.$refs.infoTitle.style.color = 'color: #f00';
     },
     stepTo () {
       this.$router.push('/Main')
